@@ -1,0 +1,102 @@
+<%- include('partials/header') %>
+<!-- <link rel="stylesheet" href="css/repair.css" -->
+<%- include('partials/nav') %>
+
+<h2>Business Services</h2>
+	<p class="explain">Select your requirement and get effortless assistance.
+	</p>
+	<form>
+		<div class="form-group row">
+			<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputName" name="inputName">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputContact" class="col-sm-2 col-form-label">Contact No</label>
+			<div class="col-sm-10">
+				<input type="tel" class="form-control" id="inputContact" name="inputContact">
+			</div>
+		</div>
+		<fieldset class="form-group">
+			<div class="row">
+				<legend class="col-form-label col-sm-2 pt-0">Service Required</legend>
+				<div class="col-sm-10">
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio1"
+							value="Apply for GST Number">
+						<label class="form-check-label" for="gridRadio1">
+							Apply for GST Number
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio2"
+							value="ISO Certificate">
+						<label class="form-check-label" for="gridRadio2">
+							ISO Certificate
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio3" value="Trademark">
+						<label class="form-check-label" for="gridRadio3">
+							Trademark
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio4"
+							value="Visiting Card Printing">
+						<label class="form-check-label" for="gridRadio4">
+							Visiting Card Printing
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio5"
+							value="Carry Bag Printing">
+						<label class="form-check-label" for="gridRadio5">
+							Carry Bag Printing
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio6"
+							value="Accounting Services">
+						<label class="form-check-label" for="gridRadio6">
+							Accounting Services
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio7"
+							value="GST Return">
+						<label class="form-check-label" for="gridRadio7">
+							GST Return
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio8"
+							value="Income Tax Return">
+						<label class="form-check-label" for="gridRadio8">
+							Income Tax Return
+						</label>
+					</div>
+				</div>
+		</fieldset>
+		<div class="form-group row">
+			<label for="inputRequirement" class="col-sm-2 col-form-label">Briefly explain the requirement if
+				needed</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputRequirement" name="inputRequirement">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputSomething" class="col-sm-2 col-form-label">Looking for something else?</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputSomething" name="inputSomething">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10" style="text-align:center;">
+				<button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+			</div>
+		</div>
+	</form>
+
+<%- include('partials/footer') %>

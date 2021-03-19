@@ -1,0 +1,81 @@
+<%- include('partials/header') %>
+<!-- <link rel="stylesheet" href="css/repair.css" -->
+<%- include('partials/nav') %>
+
+<h2>Donation/Charity</h2>
+<p class="explain">Donate your extra stuff and help someone.
+</p>
+<form>
+    <div class="form-group row">
+        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputName" name="inputName">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputContact" class="col-sm-2 col-form-label">Contact No</label>
+        <div class="col-sm-10">
+            <input type="tel" class="form-control" id="inputContact" name="inputContact">
+        </div>
+    </div>
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Donate</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio1"
+                        value="Excess Food">
+                    <label class="form-check-label" for="gridRadio1">
+                        Excess Food
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio2"
+                        value="Old Clothes">
+                    <label class="form-check-label" for="gridRadio2">
+                        Old Clothes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio3"
+                        value="Old Footwear">
+                    <label class="form-check-label" for="gridRadio3">
+                        Old Footwear
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio4"
+                        value="Bedsheets/Blankets">
+                    <label class="form-check-label" for="gridRadio4">
+                        Bedsheets/Blankets
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio5"
+                        value="Unused Medicines">
+                    <label class="form-check-label" for="gridRadio5">
+                        Unused Medicines
+                    </label>
+                </div>
+            </div>
+    </fieldset>
+    <div class="form-group row">
+        <label for="inputAddress" class="col-sm-2 col-form-label">Address to Collect From</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputAddress" name="inputAddress">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputSomething" class="col-sm-2 col-form-label">Looking for something else?</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputSomething" name="inputSomething">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10" style="text-align:center;">
+            <button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+        </div>
+    </div>
+</form>
+
+<%- include('partials/footer') %>
