@@ -5,7 +5,7 @@ const ejs = require("ejs");
 const app = express();
 
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
@@ -22,6 +22,13 @@ app.get('/contact', (req, res) => {
 });
 app.get('/cart', (req, res) => {
     res.render('cart');
+});
+
+app.post('/signup', (req, res) => {
+    console.log(req.body);
+});
+app.post('/login', (req, res) => {
+    console.log(req.body);
 });
 
 app.listen(process.env.PORT || 3000, () => {
