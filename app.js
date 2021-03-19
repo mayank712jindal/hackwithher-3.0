@@ -35,6 +35,16 @@ function connectDB(){
 }
 connectDB();
 
+let rand;
+function genRandom(){
+    rand = Math.floor(Math.random()*1000000 + 9999999);
+    if(rand.toString().length === 8){
+        return rand;
+    }else{
+        genRandom();
+    }
+}
+
 const userSchema = new mongoose.Schema({
     username: String,
     email: String,
@@ -63,9 +73,20 @@ app.get("/", (req, res) => {
 });
 app.get('/login', (req, res) => {
     if(req.isAuthenticated()){
-        return res.render('userProfile');
+        return res.redirect('/userProfile');
     }
     res.render('login', {alreadyExists: false});
+});
+app.get('/userProfile', (req, res) => {
+    User.findOne({email: req.user.email}, (err, result) => {
+        if(err){
+            console.log(`Dashboard data fetching error: \n\t${err}`)
+            res.redirect('/500');
+        }else{
+            console.log(result);
+            res.render('userProfile', {data: result});
+        }
+    });
 });
 app.get('/about', (req, res) => {
     res.render('about');
@@ -81,7 +102,7 @@ app.get('/404', (req, res) => {
     res.render('errors/notFound');
 })
 app.get('/:service', (req, res) => {
-    if(!arr.includes(req.params.topic)){
+    if(!arr.includes(req.params.service)){
         return res.redirect('/404');
     }
     if(!req.isAuthenticated()){
@@ -150,27 +171,43 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/:service', (req, res) => {
+    let today = new Date();
+    console.log(today);
     Form.exists({service: req.params.service}, (err, result) => {
         if(err){
             console.log(`Searching of DB at the time of posting Services Data: \n\t${err}`);
             return res.redirect('/500');
         }else{
             if(result){
-                Form.findOneAndUpdate({service: req.params.service}, {$push: {responses: {userId: req.user.id, ...req.body}}}, (error) => {
+                Form.findOneAndUpdate({service: req.params.service}, {$push: {responses: {userId: req.user.id, serviceId: genRandom(), date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}}}, (error) => {
                     if(error){
                         console.log(`Data Updation Error During Create New Response: ${error}`);
                         res.redirect('/500');
                       }else{
-                        res.redirect('/');
+                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}}}, (error) => {
+                            if(error){
+                                console.log(`Data Updation Error During Create New Response: ${error}`);
+                                res.redirect('/500');
+                            }else{
+                                res.redirect('/');
+                            }
+                        });
                     }
                 });
             }else{
-                Form.create({service: req.params.service, responses: [{userId: req.user.id, ...req.body}]},(error, id) => {
+                Form.create({service: req.params.service, responses: [{userId: req.user.id, serviceId: genRandom(), date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}]},(error, id) => {
                     if(error){
                       console.log(`Data Creation Error During Create New Msg: ${error}`);
                       res.redirect('/500');
                     }else{
-                      res.redirect('/');
+                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}}}, (error) => {
+                            if(error){
+                                console.log(`Data Updation Error During Create New Response: ${error}`);
+                                res.redirect('/500');
+                            }else{
+                                res.redirect('/');
+                            }
+                        });
                     }
                 })
             }
