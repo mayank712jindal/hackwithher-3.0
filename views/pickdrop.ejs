@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+<!-- <link rel="stylesheet" href="css/repair.css" -->
+<%- include('partials/nav') %>
+
+<h2>Pick & Drop</h2>
+
+	<form>
+		<div class="form-group row">
+			<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputName" name="inputName">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputContact" class="col-sm-2 col-form-label">Contact No</label>
+			<div class="col-sm-10">
+				<input type="tel" class="form-control" id="inputContact" name="inputContact">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputContact" class="col-sm-2 col-form-label">Pickup Address</label>
+			<div class="col-sm-10">
+				<input type="tel" class="form-control" id="inputPickup" name="inputpickup">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputContact" class="col-sm-2 col-form-label">Delivery Address</label>
+			<div class="col-sm-10">
+				<input type="tel" class="form-control" id="inputDelivery" name="inputDelivery">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputContact" class="col-sm-2 col-form-label">Any other instructions?</label>
+			<div class="col-sm-10">
+				<input type="tel" class="form-control" id="inputSuggestion" name="inputSuggestion">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10" style="text-align:center;">
+				<button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+			</div>
+		</div>
+	</form>
+
+<%- include('partials/footer') %>

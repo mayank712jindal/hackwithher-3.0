@@ -1,0 +1,115 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="css/jobs.css"
+<%- include('partials/nav') %>
+
+<div class="abc">
+    <h2 class="heading">Jobs</h2>
+    <p id="hero-para">Need a job? or Need an employee?<br>
+        Fill in the form below according to your requirements and we will connect you with the
+        best possibilities.
+    </p>
+</div>
+<div>
+    <center>
+        <br>
+        <button onclick="candidate()" id="btnCandidate">I’m a Candidate</button>
+        <button onclick="employee()" id="btnEmployer">I’m an Employer</button>
+        <!-- <button type="button" id="btnSubmitCandidate">SubmitCandidate</button>
+        <button type="button" id="btnSubmitEmployer">SubmitEmployer</button> -->
+
+    </center>
+    <form id="regForm">
+        <!-- <div class="tab"> -->
+        <span>Candidate Details:</span>
+        <p><input type="text" placeholder=" Candidate name*" name="cname" id="cname"></p>
+        <p><input type="number" placeholder="Mobile Number*" name="phone" id="phone"></p>
+        <p><input type="email" placeholder="E-mail" name="email" id="email"></p>
+        <p><input type="date" placeholder="DOB" name="dob" id="dob"></p>
+        <p>Gender
+            <input type="radio" name="gen" id="radioMale" value="Male">Male
+            <input type="radio" name="gen" id="radioFemale" value="Female">Female
+            <input type="radio" name="gen" id="radioOther" value="Other">Other
+        </p>
+        <!-- </div> -->
+        <!-- <div class="tab">-->
+        <span>Qualification:</span>
+        <p>
+            <select name="qualification" id="qualification">
+                <option value="" disabled="" selected="">Qualification</option>
+                <option value="Post Graduation">Post Graduation</option>
+                <option value="Grduation">Graduation</option>
+                <option value="Senior Secondary">Senior Secondary</option>
+                <option value="Metric">Metric</option>
+            </select>
+        </p>
+        <p>Highest Qualification</p>
+        <p><input type="text" placeholder="Course name*" name="coursename" id="coursename" required></p>
+        <p><input type="text" placeholder="Year*" name="year" id="year" required></p>
+        <p><input type="text" placeholder="Board/University*" name="uni" id="uni" required></p>
+        <p><input type="number" placeholder="Percentage*" name="per" id="per" required></p>
+        <p><input type="text" placeholder="Computer Expertise*" name="compExp" id="compExp" required></p>
+        <!-- <p>Languages you can Read and Speak<br>
+                <input type="checkbox" name="langs">English
+                <input type="checkbox" name="langs">Hindi
+                <input type="checkbox" name="langs">Punjabi
+            </p> -->
+        <!-- IT'S A COMPLEX TASK TO TAKE THE VALUES FROM CHECKBOX AND TO STORE THEM IN DATABASE -->
+        <!-- </div> -->
+        <!-- <div class="tab"> -->
+        <span>Job Experience:</span>
+        <p>
+            <input type="radio" name="exp" value="y" id="yes">Yes
+            <input type="radio" name="exp" id="no" value=" n" checked>No
+        </p>
+        <!-- <div id="disp">
+                <p><input type="text" placeholder="Worked as*" name="work" id="work" required></p>
+                <p><input type="number" placeholder="From Year*" name="fyr" id="fyr" required></p>
+                <p><input type="number" placeholder="To Year*" name="tyr" id="tyr" required></p>
+                <p><input type="number" placeholder="Salary*" name="sal" id="sal" required></p>
+                <p><input type="number" placeholder="Current Salary Expectation*" name="demand" id="demand"
+                        required></p>
+            </div> -->
+        <!-- </div> -->
+        <!-- <div class="tab"> -->
+        <span>Home Address:</span>
+        <p><input type="text" placeholder="City" name="city" id="city" required></p>
+        <p><input type="text" placeholder="House Number*" name="hno" id="hno" required></p>
+        <p><input type="text" placeholder="Area" name="area" id="area" required></p>
+        <p><input type="text" placeholder="Landmark*" name="land" id="land" required></p>
+</div>
+<!-- <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </div> -->
+<!-- Circles which indicates the steps of the form: -->
+<!-- <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div> -->
+</form>
+
+<form id="regForm1">
+    <!-- <div class="tab1"> -->
+    <span>Employer Details:</span>
+    <p><input type="text" placeholder="Name*" name="ename" id="ename"></p>
+    <p><input type="email" placeholder="Email*" name="emailE" id="emailE"></p>
+    <p><input type="number" placeholder="Mobile Number*" name="phoneE" id="phoneE"></p>
+    <p><input type="text" placeholder="Business Number*" name="bname" id="bname"></p>
+    <p><input type="text" placeholder="Job Type*" name="typeofjob" id="typeofjob"></p>
+    <p><input type="text" placeholder="Candidates Required*" name="noofcanditates" id="noofcanditates"></p>
+    <!-- <button type="button" onclick="validateform()" id="btnSubmit">Submit</button> -->
+    <!-- <button type="button" id="btnSubmit">Submit</button> -->
+    <!-- </div> -->
+</form>
+<center>
+    <button type="button" id="btnSubmitCandidate">Submit</button>
+    <br>
+    <button type="button" id="btnSubmitEmployer">Submit</button>
+</center>
+</div>
+
+<%- include('partials/footer') %>

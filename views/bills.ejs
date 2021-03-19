@@ -1,0 +1,72 @@
+<%- include('partials/header') %>
+<!-- <link rel="stylesheet" href="css/repair.css" -->
+<%- include('partials/nav') %>
+
+<h2>Bill Payment</h2>
+	<p class="explain">Pay your bills here. Select the department and we will help you pay.
+	</p>
+	<form>
+		<div class="form-group row">
+			<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputName" name="inputName">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputContact" class="col-sm-2 col-form-label">Contact No</label>
+			<div class="col-sm-10">
+				<input type="tel" class="form-control" id="inputContact" name="inputContact">
+			</div>
+		</div>
+		<fieldset class="form-group">
+			<div class="row">
+				<legend class="col-form-label col-sm-2 pt-0">Pay your bills for</legend>
+				<div class="col-sm-10">
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio1"
+							value="Electricity">
+						<label class="form-check-label" for="gridRadio1">
+							Electricity
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio2"
+							value="Telephone/Landline">
+						<label class="form-check-label" for="gridRadio2">
+							Telephone/Landline
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio3" value="Postpaid">
+						<label class="form-check-label" for="gridRadio3">
+							Postpaid
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio4" value="Water">
+						<label class="form-check-label" for="gridRadio4">
+							Water Supply
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio5" value="LPG Gas">
+						<label class="form-check-label" for="gridRadio5">
+							LPG Gas pipeline
+						</label>
+					</div>
+				</div>
+		</fieldset>
+		<div class="form-group row">
+			<label for="inputQuery" class="col-sm-2 col-form-label">Looking for something else?</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputSomething" name="inputSomething">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10" style="text-align:center;">
+				<button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+			</div>
+		</div>
+	</form>
+
+<%- include('partials/footer') %>

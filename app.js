@@ -23,6 +23,37 @@ app.get('/contact', (req, res) => {
 app.get('/cart', (req, res) => {
     res.render('cart');
 });
+app.get('/bank', (req, res) => {
+    res.render('bank');
+});
+app.get('/bills', (req, res) => {
+    res.render('bills');
+});
+app.get('/business', (req, res) => {
+    res.render('business');
+});
+app.get('/donation', (req, res) => {
+    res.render('donation');
+});
+app.get('/insurance', (req, res) => {
+    res.render('insurance');
+});
+app.get('/jobs', (req, res) => {
+    res.render('jobs');
+});
+app.get('/pickdrop', (req, res) => {
+    res.render('pickdrop');
+});
+app.get('/property', (req, res) => {
+    res.render('property');
+});
+app.get('/repair', (req, res) => {
+    res.render('repair');
+});
+app.get('/ticket', (req, res) => {
+    res.render('ticket');
+});
+
 
 app.post('/signup', (req, res) => {
     console.log(req.body);

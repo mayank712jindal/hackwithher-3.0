@@ -2,3 +2,11 @@
     height: 150px;
     width: auto;
   }
+  header {
+    background-image: 
+      url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+  }

@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+<!-- <link rel="stylesheet" href="css/repair.css" -->
+<%- include('partials/nav') %>
+
+<h2>Banking Services</h2>
+	<p class="explain">Need to open an account or get a loan.
+		<br>Our executives will connect you with the best poilicies out there.
+	</p>
+	<form>
+		<div class="form-group row">
+			<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputName" name="inputName">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputContact" class="col-sm-2 col-form-label">Contact No</label>
+			<div class="col-sm-10">
+				<input type="tel" class="form-control" id="inputContact" name="inputContact">
+			</div>
+		</div>
+		<fieldset class="form-group">
+			<div class="row">
+				<legend class="col-form-label col-sm-2 pt-0">Banking Service</legend>
+				<div class="col-sm-10">
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio1"
+							value="Open an Account">
+						<label class="form-check-label" for="gridRadio1">
+							Open an Account
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio2"
+							value="Get a loan">
+						<label class="form-check-label" for="gridRadio2">
+							Get a loan
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio3"
+							value="Currency exchange">
+						<label class="form-check-label" for="gridRadio3">
+							Foreign Currency Exchange
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio4" value="cards">
+						<label class="form-check-label" for="gridRadio4">
+							Credit/Debit Cards
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="gridRadio" id="gridRadio5"
+							value="Consultancy">
+						<label class="form-check-label" for="gridRadio5">
+							Consultancy
+						</label>
+					</div>
+				</div>
+		</fieldset>
+		<div class="form-group row">
+			<label for="inputAge" class="col-sm-2 col-form-label">Specify your Age</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputAge" name="inputAge">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputRequirement" class="col-sm-2 col-form-label">Briefly explain the service required</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputRequirement" name="inputRequirement">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputSomething" class="col-sm-2 col-form-label">Looking for something else?</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputSomething" name="inputSomething">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-10" style="text-align:center;">
+				<button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+			</div>
+		</div>
+	</form>
+
+<%- include('partials/footer') %>
