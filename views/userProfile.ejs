@@ -10,17 +10,17 @@
     <button class="btn btn-light btn-outline-info" id="services">Services</button>
     <button class="btn btn-light btn-outline-info" id="cart">Cart</button>
 
-    <button class="btn btn-light btn-outline-info" style="float: right;">Logout</button>
+   <button class="btn btn-light btn-outline-info" style="float: right;"><a href="/logout">Logout</a></button>
 </div>
 <div class="container details">
     <table>
         <tr>
             <td>Name:</td>
-            <td>fd</td>
+            <td><%- data.username %></td>
         </tr>
         <tr>
             <td>Email:</td>
-            <td>fd</td>
+            <td><%- data.email %></td>
         </tr>
     </table>
 </div>
@@ -37,7 +37,7 @@
             <tr>
                 <td><%- obj.date %>  </td>
                 <td><%- obj.serviceId %>  </td>
-                <td><%- obj.inputName %>  </td>
+                <td><%- obj.serviceType %>  </td>
                 <td><%- obj.inputContact %>  </td>
             </tr>
         <% }) %>

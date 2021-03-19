@@ -184,7 +184,7 @@ app.post('/:service', (req, res) => {
                         console.log(`Data Updation Error During Create New Response: ${error}`);
                         res.redirect('/500');
                       }else{
-                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}}}, (error) => {
+                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, serviceType: `${req.params.service} services`, ...req.body}}}, (error) => {
                             if(error){
                                 console.log(`Data Updation Error During Create New Response: ${error}`);
                                 res.redirect('/500');
@@ -200,7 +200,7 @@ app.post('/:service', (req, res) => {
                       console.log(`Data Creation Error During Create New Msg: ${error}`);
                       res.redirect('/500');
                     }else{
-                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}}}, (error) => {
+                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, serviceType: `${req.params.service} services`, ...req.body}}}, (error) => {
                             if(error){
                                 console.log(`Data Updation Error During Create New Response: ${error}`);
                                 res.redirect('/500');
