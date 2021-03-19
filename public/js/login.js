@@ -13,6 +13,7 @@ function emailValidate(e){
       }
 }
 function confrmpwdValidate(){
+    console.log('a');
     const pwd = document.getElementById('pwd');
     const confrmpwd = document.getElementById('confrmpwd');
     const validationArea = document.getElementById("confrmpwdValidate");
@@ -36,4 +37,3 @@ function signup(){
         return true;
     }
 }
-console.log('a');
