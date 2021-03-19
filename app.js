@@ -56,6 +56,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 let redirect = '/';
+let arr = ['bank', 'bills', 'business', 'contact', 'donation', 'insurance', 'jobs', 'pickdrop', 'property', 'repair', 'ticket'];
 
 app.get("/", (req, res) => {
     res.render("index");
@@ -69,13 +70,6 @@ app.get('/login', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about');
 });
-app.get('/:service', (req, res) => {
-    if(!req.isAuthenticated()){
-        redirect = `/${req.params.service}`;
-        return res.redirect('/login');
-    }
-    res.render(req.params.service);
-});
 app.get('/logout', (req, res) => {
     req.logOut();
     res.redirect('/');
@@ -86,6 +80,16 @@ app.get('/500', (req, res) => {
 app.get('/404', (req, res) => {
     res.render('errors/notFound');
 })
+app.get('/:service', (req, res) => {
+    if(!arr.includes(req.params.topic)){
+        return res.redirect('/404');
+    }
+    if(!req.isAuthenticated()){
+        redirect = `/${req.params.service}`;
+        return res.redirect('/login');
+    }
+    res.render(req.params.service);
+});
 app.get('*', (req, res) => {
     res.redirect('/404');
 });
