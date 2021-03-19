@@ -1,3 +1,78 @@
 <%- include('partials/header') %> 
+<link rel="stylesheet" href="css/userProfile.css" >
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 <%- include('partials/nav') %>
-<h1>User Profile</h1> 
+
+<div class="container actions">
+    <button class="btn btn-light btn-outline-info" id="details">Details</button>
+    <button class="btn btn-light btn-outline-info" id="services">Services</button>
+    <button class="btn btn-light btn-outline-info" id="cart">Cart</button>
+
+    <button class="btn btn-light btn-outline-info" style="float: right;">Logout</button>
+</div>
+<div class="container details">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>fd</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>fd</td>
+        </tr>
+    </table>
+</div>
+<div class="container services">
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Service Id</th>
+            <th>Service type</th>
+            <th>Phone No.</th>
+        </tr>
+        <% data.forms.map((obj)=>{ -%>
+             <h1>Hello</h1> 
+        <% }) -%>
+    </table>
+</div>
+<div class="container cart">
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Service Id</th>
+            <th>Service type</th>
+            <th>Phone No.</th>
+            <th>Address</th>
+        </tr>
+        <tr>
+            <td>sasa</td>
+            <td>sasa</td>
+            <td>sasa</td>
+            <td>sasa</td>
+            <td>sasa</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#details").click(function(){
+            $(".details").css("display","block");
+            $(".services").css("display","none");
+            $(".cart").css("display","none");
+        });
+        $("#services").click(function(){
+            $(".details").css("display","none");
+            $(".services").css("display","block");
+            $(".cart").css("display","none");
+        });
+        $("#cart").click(function(){
+            $(".details").css("display","none");
+            $(".services").css("display","none");
+            $(".cart").css("display","block");
+        });
+    });
+</script>
+<%- include('partials/footer') %>
