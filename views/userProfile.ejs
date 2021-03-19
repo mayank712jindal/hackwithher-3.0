@@ -32,9 +32,15 @@
             <th>Service type</th>
             <th>Phone No.</th>
         </tr>
-        <% data.forms.map((obj)=>{ -%>
-             <h1>Hello</h1> 
-        <% }) -%>
+   
+        <% data.forms.map((obj)=>{ %>
+            <tr>
+                <td><%- obj.date %>  </td>
+                <td><%- obj.serviceId %>  </td>
+                <td><%- obj.inputName %>  </td>
+                <td><%- obj.inputContact %>  </td>
+            </tr>
+        <% }) %>
     </table>
 </div>
 <div class="container cart">
