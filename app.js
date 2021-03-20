@@ -171,20 +171,19 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/:service', (req, res) => {
-    let today = new Date();
-    console.log(today);
+    var today = new Date();
     Form.exists({service: req.params.service}, (err, result) => {
         if(err){
             console.log(`Searching of DB at the time of posting Services Data: \n\t${err}`);
             return res.redirect('/500');
         }else{
             if(result){
-                Form.findOneAndUpdate({service: req.params.service}, {$push: {responses: {userId: req.user.id, serviceId: genRandom(), date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}}}, (error) => {
+                Form.findOneAndUpdate({service: req.params.service}, {$push: {responses: {userId: req.user.id, serviceId: genRandom(), date: today.toLocaleDateString(), ...req.body}}}, (error) => {
                     if(error){
                         console.log(`Data Updation Error During Create New Response: ${error}`);
                         res.redirect('/500');
                       }else{
-                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, serviceType: `${req.params.service} services`, ...req.body}}}, (error) => {
+                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: today.toLocaleDateString(), serviceType: `${req.params.service} services`, ...req.body}}}, (error) => {
                             if(error){
                                 console.log(`Data Updation Error During Create New Response: ${error}`);
                                 res.redirect('/500');
@@ -195,12 +194,12 @@ app.post('/:service', (req, res) => {
                     }
                 });
             }else{
-                Form.create({service: req.params.service, responses: [{userId: req.user.id, serviceId: genRandom(), date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, ...req.body}]},(error, id) => {
+                Form.create({service: req.params.service, responses: [{userId: req.user.id, serviceId: genRandom(), date: today.toLocaleDateString(), ...req.body}]},(error, id) => {
                     if(error){
                       console.log(`Data Creation Error During Create New Msg: ${error}`);
                       res.redirect('/500');
                     }else{
-                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: `${today.getDay()}/${today.getMonth()}/${today.getFullYear()}`, serviceType: `${req.params.service} services`, ...req.body}}}, (error) => {
+                        User.findOneAndUpdate({email: req.user.email}, {$push: {forms: {serviceId: rand, date: today.toLocaleDateString(), serviceType: `${req.params.service} services`, ...req.body}}}, (error) => {
                             if(error){
                                 console.log(`Data Updation Error During Create New Response: ${error}`);
                                 res.redirect('/500');
