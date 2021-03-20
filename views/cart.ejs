@@ -19,9 +19,39 @@
     </div>
 
 	<div>
-	<center><a href="/"><button class="btn btn-primary" onclick="orderdone()">Place Order</button></a></center>
+	<center><button class="btn btn-primary" onclick="orderdone()">Place Order</button></center>
 	</div>
     </div>
     <!-- <script src="js/cart.js"></script> -->
-    <script> function orderdone(){ localStorage.clear(); } </script>
+    <script> 
+        function orderdone(){ 
+            let orderData = {productNames: [], prices: [], quantity: [], total: []};
+            for(let ele of document.querySelectorAll('.product span')){
+                orderData.productNames.push(ele.innerText);
+            }
+            for(let ele of document.querySelectorAll('.priceVal')){
+                orderData.prices.push(ele.innerText);
+            }
+            for(let ele of document.querySelectorAll('.quantityVal')){
+                orderData.quantity.push(ele.innerText);
+            }
+            for(let ele of document.querySelectorAll('.totalVal')){
+                orderData.total.push(ele.innerText);
+            }
+            orderData.finalTotal = document.querySelector('.netTotal').innerText;
+            console.log(orderData);
+            localStorage.clear();
+            fetch('/placeOrder',
+                {
+                    method: 'post',
+                    mode: "cors",
+                    credentials: "same-origin",
+                    headers: {
+                    "Content-Type": "application/json",
+                    }, 
+                    body: JSON.stringify({orderData: 'hi'})
+                }
+            ).then(res => window.location.href = res.url)
+        }; 
+    </script>
 <%- include('partials/footer') %>

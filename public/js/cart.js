@@ -147,19 +147,19 @@ function displayCart() {
             `<div class="product"><ion-icon name="close-circle"></ion-icon><img src="images/${item.tag}.png" />
                 <span class="sm-hide">${item.name}</span>
             </div>
-            <div class="price sm-hide">Rs.${item.price}.00</div>
+            <div class="price sm-hide priceVal">Rs.${item.price}.00</div>
             <div class="quantity">
                 <ion-icon class="decrease " name="caret-back-outline"></ion-icon>
-                    <span>${item.inCart}</span>
+                    <span class="quantityVal">${item.inCart}</span>
                 <ion-icon class="increase" name="caret-forward-outline"></ion-icon>   
             </div>
-            <div class="total">Rs.${item.inCart * item.price}.00</div>`;
+            <div class="total totalVal">Rs.${item.inCart * item.price}.00</div>`;
         });
 
         productContainer.innerHTML += `
             <div class="basketTotalContainer">
                 <h4 class="basketTotalTitle">Total</h4>
-                <h4 class="basketTotal">Rs.${cart}.00</h4>
+                <h4 class="basketTotal netTotal">Rs.${cart}.00</h4>
             </div>`
 
         deleteButtons();

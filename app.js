@@ -105,6 +105,12 @@ app.get('/404', (req, res) => {
 app.get('/401', (req, res) => {
     res.render('errors/unAuthorized');
 });
+app.get('/adminResponses', (req, res) => {
+    if(req.isAuthenticated() && req.user.isAdmin){
+        return res.render('adminResponses');
+    }
+    res.redirect('/401');
+});
 app.get('/:service', (req, res) => {
     if(!arr.includes(req.params.service)){
         return res.redirect('/404');
@@ -114,12 +120,6 @@ app.get('/:service', (req, res) => {
         return res.redirect('/login');
     }
     res.render(req.params.service);
-});
-app.get('/admin/responses', (req, res) => {
-    if(req.isAuthenticated() && req.user.isAdmin){
-        return res.render('adminResponses');
-    }
-    res.redirect('/401');
 });
 app.get('*', (req, res) => {
     res.redirect('/404');
@@ -178,6 +178,10 @@ app.post('/login', (req, res) => {
           }
         }
     });
+});
+
+app.post('/placeOrder', (req, res) => {
+    res.redirect('/');
 });
 
 app.post('/:service', (req, res) => {
