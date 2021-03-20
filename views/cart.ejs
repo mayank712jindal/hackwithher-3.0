@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="css/cart.css" />
+<%- include('partials/nav') %>
+<div style="min-height: 80vh;">
+<h2>Cart</h2>
+		<p class="explain">You can edit your purchases here.<br>
+			Add or remove the items using the arrows and delete button.
+		</p>
+		<div class="container container-products">
+        <div class="product-header" >
+            <h5 class="product-title">PRODUCT</h5>
+            <h5 class="price sm-hide">PRICE</h5>
+            <h5 class="quantity">QUANTITY</h5>
+            <h5 class="total">TOTAL</h5>
+        </div>
+        <div class="products" >
+
+        </div>
+    </div>
+
+	<div>
+	<center><a href="thanks.php"><button class="btn btn-primary" onclick="orderdone()">Submit</button></a></center>
+	</div>
+    </div>
+    <!-- <script src="js/cart.js"></script> -->
+<%- include('partials/footer') %>

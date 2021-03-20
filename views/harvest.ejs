@@ -1,0 +1,107 @@
+<%- include('partials/header') %>
+<style>
+    .card-img-top{
+    height: 100px;
+    width: 100px;
+  }
+  .card{
+    border-color: #00abf0;
+    margin: 10px;
+  }
+  .card-body{
+    /* float: left; */
+    text-align: center;
+  }
+  h4{
+    font-size: 1rem;
+  }
+</style>
+<%- include('partials/nav') %>
+<h2>Fruits & Vegetables</h2>
+	<div class="container">
+		<div class="card-columns">
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/potato.png"  />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Potato</h4>
+						<p class="card-text">0.5kg @ 20/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="1" data-name="product 1" data-summary="summary 1" data-price="20" data-quantity="1" data-image="images/potato.png" id="potato"  >Add to Cart </button>
+					</div>
+			</div>
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/broccoli.png" />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Broccoli</h4>
+						<p class="card-text">0.5kg @ 50/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="2" data-name="product 2" data-summary="summary 2" data-price="50" data-quantity="1" data-image="images/broccoli.png" id="broccoli"  >Add to Cart </button>
+					</div>
+			</div>
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/corn.png" />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Corn</h4>
+						<p class="card-text">1 piece @ 25/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="3" data-name="product 3" data-summary="summary 3" data-price="25" data-quantity="1" data-image="images/corn.png" id="corn"  >Add to Cart </button>
+					</div>
+			</div>
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/tomato.png" />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Tomato</h4>
+						<p class="card-text">0.5kg @ 15/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="4" data-name="product 4" data-summary="summary 4" data-price="15" data-quantity="1" data-image="images/tomato.png" id="tomato"  >Add to Cart </button>
+					</div>
+			</div>
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/apple.png"  />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Apple</h4>
+						<p class="card-text">1kg @ 60/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="5" data-name="product 5" data-summary="summary 5" data-price="60" data-quantity="1" data-image="images/apple.png" id="apple"  >Add to Cart </button>
+					</div>
+			</div>
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/kiwi.png" />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Kiwi</h4>
+						<p class="card-text">1 piece @ 20/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="6" data-name="product 6" data-summary="summary 6" data-price="20" data-quantity="1" data-image="images/kiwi.png" id="kiwi"  >Add to Cart </button>
+					</div>
+			</div>
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/cherry.png" />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Cherry</h4>
+						<p class="card-text">0.5kg Box @ 70/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="7" data-name="product 7" data-summary="summary 7" data-price="70" data-quantity="1" data-image="images/cherr.png" id="cherry"  >Add to Cart </button>
+					</div>
+			</div>
+			<div class="card">
+					<div class="card-body">
+						<img class="card-img-top" src="images/banana.png" />
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Banana</h4>
+						<p class="card-text">1 Dozen @ 40/-</p>
+						<button class="btn btn-primary my-cart-btn product-harvest" data-id="8" data-name="product 8" data-summary="summary 8" data-price="40" data-quantity="1" data-image="images/banana.png" id="banana" >Add to Cart</button>
+					</div>
+			</div>
+			</div>
+		</div>
+	</div>
+    <!-- <script src="js/cart.js"></script> -->
+    <%- include('partials/footer') %>
