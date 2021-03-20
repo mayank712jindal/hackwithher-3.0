@@ -66,7 +66,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 let redirect = '/';
-let arr = ['bank', 'bills', 'business', 'contact', 'donation', 'insurance', 'jobs', 'pickdrop', 'property', 'repair', 'ticket'];
+let arr = ['bank', 'bills', 'business', 'contact', 'donation', 'insurance', 'jobs', 'pickdrop', 'property', 'repair', 'ticket','cart','harvest','about'];
 
 app.get("/", (req, res) => {
     res.render("index");
