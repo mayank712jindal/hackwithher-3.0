@@ -19,8 +19,9 @@
     </div>
 
 	<div>
-	<center><a href="thanks.php"><button class="btn btn-primary" onclick="orderdone()">Submit</button></a></center>
+	<center><a href="/"><button class="btn btn-primary" onclick="orderdone()">Place Order</button></a></center>
 	</div>
     </div>
     <!-- <script src="js/cart.js"></script> -->
+    <script> function orderdone(){ localStorage.clear(); } </script>
 <%- include('partials/footer') %>

@@ -103,7 +103,7 @@ app.get('/404', (req, res) => {
     res.render('errors/notFound');
 })
 app.get('/401', (req, res) => {
-    res.render('unAuthorized');
+    res.render('errors/unAuthorized');
 });
 app.get('/:service', (req, res) => {
     if(!arr.includes(req.params.service)){

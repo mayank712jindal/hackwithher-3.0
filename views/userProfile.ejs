@@ -10,7 +10,7 @@
     <button class="btn btn-light btn-outline-info" id="services">Services</button>
     <button class="btn btn-light btn-outline-info" id="cart">Cart</button>
 
-   <button class="btn btn-light btn-outline-info" style="float: right;"><a href="/logout">Logout</a></button>
+   <button class="btn btn-light btn-outline-info" style="float: right;" onclick="orderdone()"><a href="/logout">Logout</a></button>
 </div>
 <div class="container details">
     <table>
@@ -81,4 +81,5 @@
         });
     });
 </script>
+<script> function orderdone(){ localStorage.clear(); } </script>
 <%- include('partials/footer') %>
