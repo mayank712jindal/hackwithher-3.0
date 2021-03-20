@@ -49,6 +49,7 @@ const userSchema = new mongoose.Schema({
     username: String,
     email: String,
     password: String,
+    isAdmin: Boolean,
     cart: Array,
     forms: Array
 });
@@ -101,6 +102,9 @@ app.get('/500', (req, res) => {
 app.get('/404', (req, res) => {
     res.render('errors/notFound');
 })
+app.get('/401', (req, res) => {
+    res.render('unAuthorized');
+});
 app.get('/:service', (req, res) => {
     if(!arr.includes(req.params.service)){
         return res.redirect('/404');
@@ -110,6 +114,12 @@ app.get('/:service', (req, res) => {
         return res.redirect('/login');
     }
     res.render(req.params.service);
+});
+app.get('/admin/responses', (req, res) => {
+    if(req.isAuthenticated() && req.user.isAdmin){
+        return res.render('adminResponses');
+    }
+    res.redirect('/401');
 });
 app.get('*', (req, res) => {
     res.redirect('/404');
@@ -125,7 +135,7 @@ app.post('/signup', (req, res) => {
             if(result){
                 return res.render('login', {alreadyExists: true});
             }else{
-                User.register({email: req.body.email, cart: [], forms: [], username: req.body.username}, req.body.password, (err, user) => {
+                User.register({email: req.body.email, isAdmin: false, cart: [], forms: [], username: req.body.username}, req.body.password, (err, user) => {
                     if(err){
                       console.log(`User Registration Through Passport Error: \n\t${err}`);
                       res.redirect("/500");
